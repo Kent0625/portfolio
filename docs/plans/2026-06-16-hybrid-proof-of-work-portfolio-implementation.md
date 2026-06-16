@@ -14,8 +14,8 @@
 
 **Files:**
 - Create/modify asset folder: `assets/projects/`
-- Copy from sibling repo: `../ML_FINAL_PROJECT/PUBMAT.png`
-- Copy from sibling repo: `../bootstrap-coffee-farmers-income/POSTER.png`
+- Copy from sibling repo: `../../../ML_FINAL_PROJECT/PUBMAT.png`
+- Copy from sibling repo: `../../../bootstrap-coffee-farmers-income/POSTER.png`
 
 **Step 1: Create asset folder**
 
@@ -32,8 +32,8 @@ Expected: `assets/projects` exists.
 Run:
 
 ```powershell
-Copy-Item -LiteralPath '..\ML_FINAL_PROJECT\PUBMAT.png' -Destination 'assets\projects\legislative-ml-pubmat.png' -Force
-Copy-Item -LiteralPath '..\bootstrap-coffee-farmers-income\POSTER.png' -Destination 'assets\projects\coffee-income-poster.png' -Force
+Copy-Item -LiteralPath '..\..\..\ML_FINAL_PROJECT\PUBMAT.png' -Destination 'assets\projects\legislative-ml-pubmat.png' -Force
+Copy-Item -LiteralPath '..\..\..\bootstrap-coffee-farmers-income\POSTER.png' -Destination 'assets\projects\coffee-income-poster.png' -Force
 ```
 
 Expected: both images exist in `assets/projects`.
