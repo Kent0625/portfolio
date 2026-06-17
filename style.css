@@ -316,11 +316,6 @@ h1 {
     right: 0;
 }
 
-.secondary-chip {
-    bottom: 12px;
-    left: 0;
-}
-
 .hero-actions,
 .footer-actions {
     display: flex;
