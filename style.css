@@ -520,6 +520,12 @@ h1 {
 .project-card.featured {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+}
+
+.project-card.featured:focus-visible {
+    outline: 3px solid rgba(var(--accent-rgb), 0.58);
+    outline-offset: 4px;
 }
 
 .project-card.compact {

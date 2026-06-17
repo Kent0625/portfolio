@@ -165,7 +165,7 @@
             </div>
 
             <div class="project-grid">
-                <article class="project-card featured">
+                <article class="project-card featured" data-detail-href="projects/life-of-a-bill.html" role="link" tabindex="0" aria-label="Open The Life of a Bill case study">
                     <a class="project-image" href="projects/life-of-a-bill.html" aria-label="Open The Life of a Bill case study">
                         <img src="assets/projects/legislative-ml-pubmat.png" alt="Publication material for The Life of a Bill machine learning project">
                     </a>
@@ -204,7 +204,7 @@
                     </div>
                 </article>
 
-                <article class="project-card featured">
+                <article class="project-card featured" data-detail-href="projects/from-farm-to-cup.html" role="link" tabindex="0" aria-label="Open From Farm to Cup case study">
                     <a class="project-image" href="projects/from-farm-to-cup.html" aria-label="Open From Farm to Cup case study">
                         <img src="assets/projects/coffee-income-poster.png" alt="Poster for From Farm to Cup bootstrap confidence interval project">
                     </a>
@@ -243,7 +243,7 @@
                     </div>
                 </article>
 
-                <article class="project-card featured">
+                <article class="project-card featured" data-detail-href="projects/smartrip-cdo.html" role="link" tabindex="0" aria-label="Open SmartTripCDO case study">
                     <a class="project-image" href="projects/smartrip-cdo.html" aria-label="Open SmartTripCDO case study">
                         <img src="GEN_AI/FINAL%20Research%20Poster%20.png" alt="Research poster for SmartTripCDO static RAG travel itinerary system">
                     </a>
@@ -648,5 +648,25 @@
         </div>
         <p class="copyright">&copy; 2026 Kent John U. Macalam. Data Science Portfolio.</p>
     </footer>
+    <script>
+        document.querySelectorAll('[data-detail-href]').forEach((card) => {
+            const destination = card.dataset.detailHref;
+
+            card.addEventListener('click', (event) => {
+                if (event.target.closest('a, button, summary')) {
+                    return;
+                }
+
+                window.location.href = destination;
+            });
+
+            card.addEventListener('keydown', (event) => {
+                if ((event.key === 'Enter' || event.key === ' ') && event.target === card) {
+                    event.preventDefault();
+                    window.location.href = destination;
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -33,6 +33,19 @@ if (-not (Test-Path -LiteralPath $indexPath)) {
     Assert-Contains $index 'href="projects/life-of-a-bill\.html"' "Homepage must link The Life of a Bill card to its detail page."
     Assert-Contains $index 'href="projects/from-farm-to-cup\.html"' "Homepage must link From Farm to Cup card to its detail page."
     Assert-Contains $index 'href="projects/smartrip-cdo\.html"' "Homepage must link SmartTripCDO card to its detail page."
+
+    foreach ($destination in @(
+        "projects/life-of-a-bill.html",
+        "projects/from-farm-to-cup.html",
+        "projects/smartrip-cdo.html"
+    )) {
+        $cardPattern = '<article(?=[^>]*class="project-card featured")(?=[^>]*data-detail-href="' + [regex]::Escape($destination) + '")(?=[^>]*role="link")(?=[^>]*tabindex="0")'
+        Assert-Contains $index $cardPattern "Homepage featured card must make the full card clickable for $destination."
+    }
+
+    Assert-Contains $index "querySelectorAll\('\[data-detail-href\]'\)" "Homepage must initialize clickable project cards."
+    Assert-Contains $index "closest\('a, button, summary'\)" "Clickable cards must preserve nested action links."
+    Assert-Contains $index "addEventListener\('keydown'" "Clickable cards must support keyboard navigation."
 }
 
 $projects = @(
