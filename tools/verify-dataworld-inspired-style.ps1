@@ -25,6 +25,18 @@ function Assert-Contains {
     }
 }
 
+function Assert-NotContains {
+    param(
+        [string]$Content,
+        [string]$Pattern,
+        [string]$Message
+    )
+
+    if ($Content -match $Pattern) {
+        Add-Failure $Message
+    }
+}
+
 $stylePath = Join-Path $root "style.css"
 if (-not (Test-Path -LiteralPath $stylePath)) {
     Add-Failure "Missing style.css"
@@ -35,7 +47,7 @@ if (-not (Test-Path -LiteralPath $stylePath)) {
     Assert-Contains $style '--surface:\s*#ffffff;' "Style tokens must use white card surfaces."
     Assert-Contains $style '--accent:\s*#ffe16a;' "Style tokens must use a yellow primary CTA accent."
     Assert-Contains $style '--accent-rgb:\s*255,\s*225,\s*106;' "Style tokens must expose yellow RGB values."
-    Assert-Contains $style '\.top-status-bar' "CSS must style the top status bar."
+    Assert-NotContains $style '\.top-status-bar' "CSS must not include the removed top status bar."
     Assert-Contains $style '\.hero-section[^\{]*\{' "CSS must keep a styled hero section."
     Assert-Contains $style 'background:\s*var\(--hero-bg\)' "Hero/header surfaces must use the enterprise-blue token."
     Assert-Contains $style '\.project-card\.featured\s*\{' "Featured project cards must keep a dedicated style block."
@@ -57,8 +69,7 @@ foreach ($page in $pages) {
     }
 
     $content = Read-Text $path
-    Assert-Contains $content 'class="top-status-bar"' "$page must include the new top status bar."
-    Assert-Contains $content 'Data portfolio' "$page top status bar should identify the site as a data portfolio."
+    Assert-NotContains $content 'class="top-status-bar"' "$page must not include the removed top status bar."
 }
 
 $indexPath = Join-Path $root "index.html"
