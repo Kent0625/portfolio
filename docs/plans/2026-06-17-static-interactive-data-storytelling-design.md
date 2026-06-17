@@ -11,7 +11,7 @@ Use the current HTML/CSS portfolio as the base and add a premium but lightweight
 - Bento-style summary cards for tools, proof, GitHub, resume, and project signals.
 - CSS-only scroll reveal animations using opacity and transform.
 - Animated hero keywords for Data Science, Machine Learning, Dashboards, and AI.
-- A subtle CSS-only data cube accent in the hero instead of heavy WebGL.
+- A subtle CSS-only data stack accent in the hero instead of heavy WebGL.
 - Project storytelling sections that show problem, data, method, result, and impact.
 - An interactive preview panel using accessible radio tabs for EDA, Model, Dashboard, and Insights.
 
@@ -29,7 +29,7 @@ Use the current HTML/CSS portfolio as the base and add a premium but lightweight
 1. Hero
    - Retain Kent's name and core positioning.
    - Add a rotating word rail for "Data Science", "Machine Learning", "Dashboards", and "AI".
-   - Add one CSS-only data cube/accent panel on desktop.
+   - Add one CSS-only data stack/accent panel on desktop.
 
 2. Bento Summary
    - Add a compact grid after the hero.

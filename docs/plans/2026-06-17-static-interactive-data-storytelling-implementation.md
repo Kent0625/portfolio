@@ -24,7 +24,7 @@ Add a keyword rail under the hero copy:
 - Dashboards
 - AI
 
-Add a CSS-only hero visual container with data cube and metric chips.
+Add a CSS-only hero visual container with a data stack and metric chips.
 
 **Step 2: Add bento summary section**
 
@@ -70,7 +70,7 @@ Create responsive bento cards with stable dimensions, 8px border radius, and no 
 
 **Step 2: Add hero visual**
 
-Create a CSS-only data cube or data stack accent that does not depend on WebGL.
+Create a CSS-only data stack accent that does not depend on WebGL.
 
 **Step 3: Add lightweight motion**
 
