@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Life of a Bill | Kent John U. Macalam</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="case-study-page">
+    <header class="case-header">
+        <nav class="case-nav" aria-label="Case study navigation">
+            <a class="case-back" href="../index.html#projects">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                Back to projects
+            </a>
+            <a class="nav-action" href="https://github.com/Kent0625/ML_FINAL_PROJECT" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                GitHub
+            </a>
+        </nav>
+    </header>
+
+    <main class="case-main">
+        <section class="case-hero">
+            <div class="case-hero-copy">
+                <p class="eyebrow">Machine Learning Case Study</p>
+                <h1>The Life of a Bill</h1>
+                <p>
+                    A supervised machine learning project that predicts Philippine Senate bill status from legislative records and explains which signals are most useful for understanding bill movement.
+                </p>
+                <div class="case-actions">
+                    <a class="button primary" href="https://github.com/Kent0625/ML_FINAL_PROJECT" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        View GitHub Project
+                    </a>
+                    <a class="button secondary" href="../index.html#projects">
+                        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                        All Projects
+                    </a>
+                </div>
+            </div>
+            <div class="case-metrics" aria-label="The Life of a Bill metrics">
+                <span><strong>7,352</strong>bill records</span>
+                <span><strong>XGBoost</strong>selected model</span>
+                <span><strong>4</strong>Congresses covered</span>
+            </div>
+        </section>
+
+        <section class="case-proof-grid">
+            <a class="case-visual" href="https://github.com/Kent0625/ML_FINAL_PROJECT" target="_blank" rel="noopener" aria-label="Open The Life of a Bill proof on GitHub">
+                <img src="../assets/projects/legislative-ml-pubmat.png" alt="The Life of a Bill machine learning project poster">
+            </a>
+            <div class="case-summary">
+                <p class="eyebrow">Project focus</p>
+                <h2>Full Content</h2>
+                <p>
+                    This project turns historical Senate bill records into a classification workflow. The case study highlights the problem, data preparation, model comparison, result interpretation, and value of explaining why many bills remain early in the legislative process.
+                </p>
+            </div>
+        </section>
+
+        <section class="case-section-grid" aria-label="The Life of a Bill case study details">
+            <article class="case-panel">
+                <h2>Problem</h2>
+                <p>
+                    Many bills are filed in the Senate, but only a small portion move forward. The project asks whether historical bill attributes can help predict status and reveal common progress patterns.
+                </p>
+            </article>
+            <article class="case-panel">
+                <h2>Data</h2>
+                <p>
+                    The dataset contains 7,352 Senate bill records from the 15th to 18th Congress. Records were cleaned, structured, and prepared for modeling with legislative features.
+                </p>
+            </article>
+            <article class="case-panel">
+                <h2>Method</h2>
+                <p>
+                    The workflow used Python, feature engineering, model comparison, and XGBoost classification. The project also emphasized explainability through model signals and feature interpretation.
+                </p>
+            </article>
+            <article class="case-panel">
+                <h2>Result</h2>
+                <p>
+                    XGBoost was selected as the main model for structured prediction. The output made it easier to compare status signals across filing context, policy area, and legislative movement.
+                </p>
+            </article>
+            <article class="case-panel case-panel-wide">
+                <h2>Impact</h2>
+                <p>
+                    The project shows how machine learning can support legislative analysis by turning a large public record set into a clearer, evidence-based story about bill progress.
+                </p>
+            </article>
+        </section>
+
+        <section class="case-evidence" aria-label="The Life of a Bill tools and evidence">
+            <div>
+                <strong>Tools</strong>
+                <span>Python, Pandas, scikit-learn, XGBoost</span>
+            </div>
+            <div>
+                <strong>Evidence</strong>
+                <span>Poster, model workflow, GitHub repository</span>
+            </div>
+            <div>
+                <strong>Role</strong>
+                <span>Data cleaning, modeling, interpretation</span>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
