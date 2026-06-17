@@ -79,7 +79,7 @@ Check that:
 - New ML project links to `https://github.com/Kent0625/ML_FINAL_PROJECT`.
 - New coffee project links to `https://github.com/Kent0625/bootstrap-coffee-farmers-income`.
 - Existing project links still open in a new tab.
-- Resume link uses the client-facing CV DOCX resume asset.
+- Resume link uses the provided PDF resume asset.
 
 ---
 
