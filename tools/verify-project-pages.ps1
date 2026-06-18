@@ -107,6 +107,28 @@ if (Test-Path -LiteralPath $lifePagePath) {
     Assert-Contains $lifePage 'class="case-live-frame"' "The Life of a Bill page must include the live model iframe."
     Assert-Contains $lifePage 'title="Interactive Life of a Bill model"' "The live model iframe must have an accessible title."
     Assert-Contains $lifePage 'Open full-screen' "The embedded demo must provide a full-screen fallback."
+    Assert-Contains $lifePage 'class="button secondary case-live-action"' "The Life of a Bill full-screen link must use the light-section action style."
+}
+
+$smartTripPagePath = Join-Path $root "projects/smartrip-cdo.html"
+if (Test-Path -LiteralPath $smartTripPagePath) {
+    $smartTripPage = Read-Text $smartTripPagePath
+    $smartTripEmbedUrl = "https://kent0625-smartrip-cdo.hf.space/?embed=true"
+
+    Assert-Contains $smartTripPage 'href="#live-app"' "SmartTrip primary action must scroll to the embedded app."
+    Assert-Contains $smartTripPage 'Try Live App' "SmartTrip page must include a Try Live App action."
+    Assert-Contains $smartTripPage 'id="live-app"' "SmartTrip page must include a live-app section."
+    Assert-Contains $smartTripPage 'class="case-live-demo"' "SmartTrip page must reuse the live-demo section."
+    Assert-Contains $smartTripPage ([regex]::Escape($smartTripEmbedUrl)) "SmartTrip page must embed the deployed Hugging Face app."
+    Assert-Contains $smartTripPage 'title="Interactive SmartTripCDO travel planner"' "SmartTrip iframe must have an accessible title."
+    Assert-Contains $smartTripPage 'class="button secondary case-live-action"' "SmartTrip full-screen link must use the light-section action style."
+    Assert-Contains $smartTripPage 'Open full-screen' "SmartTrip live section must provide a full-screen fallback."
+
+    $liveSectionIndex = $smartTripPage.IndexOf('id="live-app"')
+    $proofGridIndex = $smartTripPage.IndexOf('class="case-proof-grid"')
+    if ($liveSectionIndex -lt 0 -or $proofGridIndex -lt 0 -or $liveSectionIndex -gt $proofGridIndex) {
+        Add-Failure "SmartTrip embedded app must appear before the poster proof grid."
+    }
 }
 
 $stylePath = Join-Path $root "style.css"
@@ -114,6 +136,8 @@ if (Test-Path -LiteralPath $stylePath) {
     $style = Read-Text $stylePath
     Assert-Contains $style '\.case-live-demo\s*\{' "Portfolio styles must include the live demo section."
     Assert-Contains $style '\.case-live-frame\s*\{' "Portfolio styles must size the live model iframe."
+    Assert-Contains $style '\.button\.secondary\.case-live-action\s*\{[^}]*background:\s*var\(--surface\)' "Live-demo actions must override the secondary button with a light surface background."
+    Assert-Contains $style '\.button\.secondary\.case-live-action\s*\{[^}]*color:\s*var\(--hero-bg\)' "Live-demo actions must override the secondary button with readable dark text."
     Assert-Contains $style '\.case-study-page\s*\{[^}]*overflow-x:\s*clip' "Case-study pages must contain full-bleed horizontal overflow."
 }
 

@@ -35,9 +35,9 @@
                     A deployed Streamlit travel assistant for Cagayan de Oro that uses a curated local attractions dataset and static RAG-style prompting to generate grounded itineraries.
                 </p>
                 <div class="case-actions">
-                    <a class="button primary" href="https://kent0625-smartrip-cdo.hf.space" target="_blank" rel="noopener">
-                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                        Open Live App
+                    <a class="button primary" href="#live-app">
+                        <i class="fa-solid fa-play" aria-hidden="true"></i>
+                        Try Live App
                     </a>
                     <a class="button secondary" href="https://github.com/Kent0625/smartrip_cdo" target="_blank" rel="noopener">
                         <i class="fa-brands fa-github" aria-hidden="true"></i>
@@ -50,6 +50,35 @@
                 <span><strong>0%</strong>hallucination rate</span>
                 <span><strong>76.32%</strong>clustering efficiency</span>
             </div>
+        </section>
+
+        <section class="case-live-demo" id="live-app" aria-labelledby="live-app-title">
+            <div class="case-live-heading">
+                <div>
+                    <p class="eyebrow">Interactive app</p>
+                    <h2 id="live-app-title">Build a Cagayan de Oro itinerary</h2>
+                    <p>
+                        Enter a budget, available time, group type, and interests to evaluate how SmartTripCDO filters its curated local dataset and creates a grounded travel plan.
+                    </p>
+                </div>
+                <a class="button secondary case-live-action" href="https://kent0625-smartrip-cdo.hf.space" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                    Open full-screen
+                </a>
+            </div>
+            <div class="case-live-frame-shell">
+                <iframe
+                    class="case-live-frame"
+                    src="https://kent0625-smartrip-cdo.hf.space/?embed=true"
+                    title="Interactive SmartTripCDO travel planner"
+                    loading="eager"
+                    allow="clipboard-write"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                ></iframe>
+            </div>
+            <p class="case-live-note">
+                The free Hugging Face Space may take a moment to wake after a period of inactivity.
+            </p>
         </section>
 
         <section class="case-proof-grid">
@@ -105,7 +134,7 @@
             </div>
             <div>
                 <strong>Evidence</strong>
-                <span>Live Hugging Face app, research poster, GitHub source</span>
+                <span>Embedded live app, research poster, GitHub source</span>
             </div>
             <div>
                 <strong>Role</strong>
