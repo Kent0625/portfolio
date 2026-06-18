@@ -19,9 +19,9 @@
                 <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
                 Back to projects
             </a>
-            <a class="nav-action" href="https://github.com/Kent0625/ML_FINAL_PROJECT" target="_blank" rel="noopener">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
-                GitHub
+            <a class="nav-action" href="https://kent0625-life-of-a-bill.hf.space" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                Live Model
             </a>
         </nav>
     </header>
@@ -35,21 +35,50 @@
                     A supervised machine learning project that predicts Philippine Senate bill status from legislative records and explains which signals are most useful for understanding bill movement.
                 </p>
                 <div class="case-actions">
-                    <a class="button primary" href="https://github.com/Kent0625/ML_FINAL_PROJECT" target="_blank" rel="noopener">
-                        <i class="fa-brands fa-github" aria-hidden="true"></i>
-                        View GitHub Project
+                    <a class="button primary" href="#live-model">
+                        <i class="fa-solid fa-play" aria-hidden="true"></i>
+                        Try Live Model
                     </a>
-                    <a class="button secondary" href="../index.html#projects">
-                        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
-                        All Projects
+                    <a class="button secondary" href="https://github.com/Kent0625/ML_FINAL_PROJECT" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        View Source
                     </a>
                 </div>
             </div>
             <div class="case-metrics" aria-label="The Life of a Bill metrics">
                 <span><strong>7,352</strong>bill records</span>
                 <span><strong>XGBoost</strong>selected model</span>
-                <span><strong>4</strong>Congresses covered</span>
+                <span><strong>0.51</strong>holdout macro F1</span>
             </div>
+        </section>
+
+        <section class="case-live-demo" id="live-model" aria-labelledby="live-model-title">
+            <div class="case-live-heading">
+                <div>
+                    <p class="eyebrow">Interactive model</p>
+                    <h2 id="live-model-title">Evaluate a bill scenario</h2>
+                    <p>
+                        Enter policy keywords and legislative context to compare the model's probabilities for First Reading, Second Reading, and Approved. The result is a historical pattern estimate, not a legal or policy forecast.
+                    </p>
+                </div>
+                <a class="button secondary" href="https://kent0625-life-of-a-bill.hf.space" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                    Open full-screen
+                </a>
+            </div>
+            <div class="case-live-frame-shell">
+                <iframe
+                    class="case-live-frame"
+                    src="https://kent0625-life-of-a-bill.hf.space/?embed=true"
+                    title="Interactive Life of a Bill model"
+                    loading="eager"
+                    allow="clipboard-write"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                ></iframe>
+            </div>
+            <p class="case-live-note">
+                The free Hugging Face Space may take a moment to wake after a period of inactivity.
+            </p>
         </section>
 
         <section class="case-proof-grid">
@@ -105,7 +134,7 @@
             </div>
             <div>
                 <strong>Evidence</strong>
-                <span>Poster, model workflow, GitHub repository</span>
+                <span>Live model, poster, model workflow, GitHub repository</span>
             </div>
             <div>
                 <strong>Role</strong>

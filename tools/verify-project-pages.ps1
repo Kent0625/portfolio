@@ -96,6 +96,27 @@ foreach ($project in $projects) {
     }
 }
 
+$lifePagePath = Join-Path $root "projects/life-of-a-bill.html"
+if (Test-Path -LiteralPath $lifePagePath) {
+    $lifePage = Read-Text $lifePagePath
+    $liveModelUrl = "https://kent0625-life-of-a-bill.hf.space"
+
+    Assert-Contains $lifePage ([regex]::Escape($liveModelUrl)) "The Life of a Bill page must link to the deployed model."
+    Assert-Contains $lifePage 'Try Live Model' "The Life of a Bill page must include a Try Live Model action."
+    Assert-Contains $lifePage 'class="case-live-demo"' "The Life of a Bill page must include the embedded demo section."
+    Assert-Contains $lifePage 'class="case-live-frame"' "The Life of a Bill page must include the live model iframe."
+    Assert-Contains $lifePage 'title="Interactive Life of a Bill model"' "The live model iframe must have an accessible title."
+    Assert-Contains $lifePage 'Open full-screen' "The embedded demo must provide a full-screen fallback."
+}
+
+$stylePath = Join-Path $root "style.css"
+if (Test-Path -LiteralPath $stylePath) {
+    $style = Read-Text $stylePath
+    Assert-Contains $style '\.case-live-demo\s*\{' "Portfolio styles must include the live demo section."
+    Assert-Contains $style '\.case-live-frame\s*\{' "Portfolio styles must size the live model iframe."
+    Assert-Contains $style '\.case-study-page\s*\{[^}]*overflow-x:\s*clip' "Case-study pages must contain full-bleed horizontal overflow."
+}
+
 if ($failures.Count -gt 0) {
     Write-Host "Project detail page verification failed:" -ForegroundColor Red
     foreach ($failure in $failures) {
