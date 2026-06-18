@@ -104,6 +104,13 @@ if (Test-Path -LiteralPath $indexPath) {
     Assert-NotContains $index 'Selected tools, project areas, and links gathered in one place\.' "Snapshot copy must be shortened."
     Assert-NotContains $index 'Start here for my project source, resume, project mix, and availability in one place\.' "Proof section copy must be shortened."
     Assert-NotContains $index 'Selected project outputs showing how I move from raw records to explainable models, dashboards, and decision-ready findings\.' "Preview copy must be shortened."
+    Assert-Contains $index '<small>Selected model</small><strong>XGBoost</strong>' "Model preview must name XGBoost as the selected model."
+    Assert-Contains $index '<small>Holdout macro F1</small><strong>0\.51</strong>' "Model preview must show the documented holdout macro F1."
+    Assert-Contains $index '<small>Evaluation set</small><strong>Holdout</strong>' "Model preview must identify the holdout evaluation set."
+    Assert-Contains $index 'Available for Data Science Internships, Analytics Projects, and ML Prototype Work\.' "Footer must use the approved availability CTA."
+    Assert-NotContains $index '<strong>0\.71</strong>' "Homepage must not include the unsupported 0.71 preview score."
+    Assert-NotContains $index '<strong>0\.84</strong>' "Homepage must not include the unsupported 0.84 preview score."
+    Assert-NotContains $index '<strong>0\.78</strong>' "Homepage must not include the unsupported 0.78 preview score."
 }
 
 $stylePath = Join-Path $root "style.css"
