@@ -1731,11 +1731,31 @@ h1 {
         padding-inline: 12px;
     }
 
+    .nav-shell {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0.55rem;
+    }
+
     .nav-action {
-        padding-inline: 0.7rem;
+        min-height: 44px;
+        padding-inline: 0.65rem;
     }
 
     .nav-links {
+        display: flex;
+        gap: 0.7rem;
+        overflow: visible;
+        padding: 0;
+    }
+
+    .nav-links a {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        font-size: 0.84rem;
+    }
+
+    .nav-links .nav-optional {
         display: none;
     }
 
